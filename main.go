@@ -88,7 +88,7 @@ func generateBlockIps(config Config) error {
 	}
 
 	if len(ips) > 0 {
-		file, err := os.OpenFile(config.FilePath, os.O_CREATE, 0664)
+		file, err := os.OpenFile(config.FilePath, os.O_CREATE|os.O_APPEND, 0664)
 		if err != nil {
 			log.Fatalln(err)
 			return err
